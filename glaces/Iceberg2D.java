@@ -132,7 +132,7 @@ public class Iceberg2D {
      * @param fr dans ]0..1[ facteur de réduction
      */
     public void casserDroite(double fr) {
-	Point p1 = new Point(this.largeur() * fr, enHautADroite.getOrdonnee());
+	Point p1 = new Point((this.largeur() * fr) + enBasAGauche.getAbscisse(), enHautADroite.getOrdonnee());
 	enHautADroite = new Point(p1);
     }
     
@@ -141,7 +141,7 @@ public class Iceberg2D {
      * @param fr dans ]0..1[ facteur de réduction
      */
     public void casserGauche(double fr) {
-	Point p1 = new Point(this.largeur() * fr, enBasAGauche.getOrdonnee());
+	Point p1 = new Point(enHautADroite.getAbscisse() - (this.largeur() * fr), enBasAGauche.getOrdonnee());
 	enBasAGauche = new Point(p1);
     }
     
@@ -150,7 +150,7 @@ public class Iceberg2D {
      * @param fr dans ]0..1[ facteur de réduction
      */
     public void casserHaut(double fr) {
-	Point p1 = new Point(enHautADroite.getAbscisse(), this.hauteur() * fr);
+	Point p1 = new Point(enHautADroite.getAbscisse(), (this.hauteur() * fr) + enBasAGauche.getOrdonnee());
 	enHautADroite = new Point(p1);
     }
     
@@ -159,7 +159,7 @@ public class Iceberg2D {
      * @param fr dans ]0..1[ : définit le pourcentage supprimé
      */
     public void casserBas(double fr) {
-	Point p1 = new Point(enBasAGauche.getAbscisse(), this.hauteur() * fr);
+	Point p1 = new Point(enBasAGauche.getAbscisse(), enHautADroite.getOrdonnee() - (this.hauteur() * fr));
 	enBasAGauche = new Point(p1);
     }
     
