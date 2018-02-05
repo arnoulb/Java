@@ -1,0 +1,2 @@
+/usr/lib/jvm/oracle-jdk1.8.0_20/bin/javac -classpath /opt/depot/BPO/geometrie.jar:. -encoding iso-8859-1 glaces/$1.java
+/usr/lib/jvm/oracle-jdk1.8.0_20/bin/java -classpath /opt/depot/BPO/geometrie.jar:. glaces.$1

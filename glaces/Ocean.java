@@ -14,7 +14,7 @@ public class Ocean {
 	hauteur = heigh;
 	largeur = width;
 
-	nbIceberg = 2;
+	nbIceberg = 6;
 	icebergs = new Iceberg2D[nbIceberg];
 
 	Random rand = new Random();
@@ -41,7 +41,7 @@ public class Ocean {
     }
 
     public int getCompte() {
-	return (this.icebergs.length());
+	return (this.icebergs.length);
     }
 
     public void fondre (double fr){

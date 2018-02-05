@@ -122,9 +122,11 @@ public class Iceberg2D {
      * @param fr dans ]0..1[ facteur de réduction
      */ 
     public void fondre(double fr) {
-        // A compléter
 	double largeur = this.largeur() * (fr / 2);
 	double hauteur = this.hauteur() * (fr / 2);
+	Point orig = this.centre();
+	Point hd = new Point(orig.getAbscisse() + (largeur / 2), orig.getOrdonnee() + (hauteur / 2));
+	Point bg = new Point(orig.getAbscisse() - (largeur / 2), orig.getOrdonnee() - (hauteur / 2));
     }
     
     /**
